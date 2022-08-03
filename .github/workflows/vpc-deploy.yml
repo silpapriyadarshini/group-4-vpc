@@ -1,4 +1,4 @@
-name: AutoScaling deployment in AWS
+name: VPCGroup4 deployment in AWS
 on:
   push:
     branches:
