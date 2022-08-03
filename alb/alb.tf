@@ -1,9 +1,10 @@
-#1. add subnet id
+#1. add public subnet id in aws_lb
 
 resource "aws_lb" "alb_project" {
   name               = "alb-project"
   security_groups    = [aws_security_group.alb_sg.id]
-  #subnets            = [for subnet in aws_subnet.public : subnet.id]
+  load_balancer_type = "application"
+  subnets            = [data.aws_subnet.public.id]
 
   enable_deletion_protection = true
 
@@ -19,6 +20,17 @@ resource "aws_alb_listener" "listener_http" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.front_end.arn
+
+    forward {
+      target_group {
+        arn    = aws_lb_target_group.tg_blue.arn
+        weight = 50
+      }
+    
+    target_group {
+      arn    = aws_lb_target_group.tg_green.arn
+      weight = 50
+      }
+    }
   }
 }
