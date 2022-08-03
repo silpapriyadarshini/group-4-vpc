@@ -1,0 +1,1 @@
+allowed_network        = "27.4.78.245"       #give the network ip address"
