@@ -2,7 +2,7 @@
 
 resource "aws_security_group" "bastion_host_sg" {
   name        = "bastion-host-sg"
-  description = "Allow connection for Ansible"
+  description = "Allow connection for Bastion Host"
   vpc_id      = data.aws_vpc.lab_vpc.id
 
   ingress {
