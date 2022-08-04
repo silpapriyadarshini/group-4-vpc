@@ -1,3 +1,3 @@
-variable "allowed_network" {
-    description = "This is a network address"
-}
+# variable "allowed_network" {
+#     description = "This is a network address"
+# }
