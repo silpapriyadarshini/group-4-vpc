@@ -1,5 +1,3 @@
-#1. check key_name, subnet id
-
 resource "aws_instance" "bastion_host" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.small"
