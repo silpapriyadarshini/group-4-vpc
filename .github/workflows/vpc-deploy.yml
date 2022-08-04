@@ -2,7 +2,7 @@ name: VPCGroup4 deployment in AWS
 on:
   push:
     branches:
-      default-branch  # clone the container and deploy through main branch
+      vpc_workflow  # clone the container and deploy through main branch
 jobs:
    terraform-deploy:
       runs-on: ubuntu-latest
