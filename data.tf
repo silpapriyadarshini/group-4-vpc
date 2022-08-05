@@ -1,7 +1,3 @@
-#1. check ami owners, 
-#2. edit vpc name, tag
-#3. edit subnet name and values
-
 data "aws_ami" "ubuntu" {
   most_recent = true
 

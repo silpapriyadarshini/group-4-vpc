@@ -1,5 +1,3 @@
-#edit vpc id, cidr block(ingress)
-
 resource "aws_security_group" "bastion_host_sg" {
   name        = "bastion-host-sg"
   description = "Allow connection for Bastion Host"
@@ -12,6 +10,14 @@ resource "aws_security_group" "bastion_host_sg" {
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
+  
+  # ingress {
+  #   description      = "Allow port 22"
+  #   from_port        = 80
+  #   to_port          = 80
+  #   protocol         = "tcp"
+  #   cidr_blocks      = ["0.0.0.0/0"]
+  # }
 
   egress {
     from_port        = 0
