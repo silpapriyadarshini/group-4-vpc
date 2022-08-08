@@ -4,7 +4,7 @@ resource "aws_instance" "bastion_host" {
 
   vpc_security_group_ids = [aws_security_group.bastion_host_sg.id]
 
-  #key_name = "talent-academy-lab"
+  key_name = "group-project"
   subnet_id = data.aws_subnet.public_1.id
 
   tags = {

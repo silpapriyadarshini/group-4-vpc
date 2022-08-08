@@ -8,16 +8,16 @@ resource "aws_security_group" "bastion_host_sg" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    cidr_blocks      = ["27.7.5.237/32"]
   }
   
-  # ingress {
-  #   description      = "Allow port 22"
-  #   from_port        = 80
-  #   to_port          = 80
-  #   protocol         = "tcp"
-  #   cidr_blocks      = ["0.0.0.0/0"]
-  # }
+   ingress {
+     description      = "Allow port 22"
+     from_port        = 80
+     to_port          = 80
+     protocol         = "tcp"
+     cidr_blocks      = ["27.7.5.237/32"]
+   }
 
   egress {
     from_port        = 0
